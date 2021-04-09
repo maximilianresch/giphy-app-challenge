@@ -1,4 +1,11 @@
-import { Box, Input, Center, GridItem, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  Center,
+  GridItem,
+  Heading,
+
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import useSWR from "swr";
 import { BouncingBall } from "../components/BouncingBall";
@@ -52,11 +59,21 @@ export default function Gifs() {
   return (
     <Box>
       <Box d="flex" justifyContent="center" pb="8">
-        <Heading>Gif Search</Heading>
+        <Heading
+          bgGradient="linear(to-t, #7928CA, #FF0080)"
+          bgClip="text"
+          fontSize={["2em", "3em", "3.5em", "3.7em"]}
+          textShadow=" 0 10px 10px rgba(0, 0, 0, 0.2),
+          0 20px 20px rgba(0, 0, 0, 0.15)"
+        >
+          Gif Search
+        </Heading>
       </Box>
-      <Box d="flex" justifyContent="center">
+      <Box d="flex" justifyContent="center" pb="8">
         <Input
           w="70%"
+          variant="filled"
+          size="lg"
           placeholder="Search..."
           value={term}
           onChange={(e) => {
@@ -88,12 +105,12 @@ export default function Gifs() {
                 ? true
                 : gifs.length < (data?.pagination?.total_count ?? 0)
             }
-            loader={<></>}
             endMessage={
               <p style={{ display: "flex", textAlign: "center" }}>
                 <b>Yay! You have seen it all</b>
               </p>
             }
+            loader={<></>}
           >
             {gifs.map((gif) => {
               return (

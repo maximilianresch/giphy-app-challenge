@@ -36,15 +36,15 @@ export const GifSlider: React.FC = () => {
   return (
     <Box p="3">
       <Stack
-        overflow="scroll"
+        overflowX="scroll"
         flexDirection="row"
         shouldWrapChildren={true}
         isInline={true}
       >
-        {data.data.map((el: any) => {
+        {data.data.map((gif: any) => {
           return (
             <Box w="100%" h="auto">
-              <Image opacity="0.7" src={el.images.fixed_height.webp} />
+              <Image key={gif.id} opacity="0.9" src={gif.images.fixed_height.webp} />
             </Box>
           );
         })}

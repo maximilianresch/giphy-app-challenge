@@ -10,7 +10,7 @@ import { DarkModeSwitch } from "../components/DarkModeSwitch";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <ChakraProvider resetCSS theme={theme}>
+      <ChakraProvider theme={theme}>
         <Box d="flex" justifyContent="flex-end" m="2" alignItems="center">
           <DarkModeSwitch />
           <Navigation />
