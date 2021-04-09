@@ -37,7 +37,7 @@ export const GifCard: React.FC<{
                 navigator.clipboard.writeText(gif.url),
                   toast({
                     title: "URL copied!",
-                    description: "We copied the URL to the clipboard",
+                    description: "We copied the URL to your clipboard",
                     status: "success",
                     duration: 6000,
                     isClosable: true,
