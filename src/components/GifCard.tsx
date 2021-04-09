@@ -21,7 +21,7 @@ export const GifCard: React.FC<{
         bg="linear-gradient(53deg, rgba(124,72,232,0.5018382352941176) 18%, rgba(79,163,255,0.5046393557422969) 63%)"
         color="white"
       >
-        <Box d="flex" justifyContent="center" pt="1">
+        <Box d="flex" justifyContent="center" >
           <Image borderRadius="lg" src={gif.url} />
         </Box>
 
