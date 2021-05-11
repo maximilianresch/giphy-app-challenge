@@ -28,7 +28,7 @@ export default function Gifs() {
 
   const { isDesktop } = useResponsive();
 
-  const apiKey = "vf7nDm11F3X2Pe63jIGjWWPiFCFCZXM8";
+  const apiKey = "Go6fjUeO5SQlLkxz0ZNTQA0UO7RT0YlW";
   const baseUrl = "https://api.giphy.com/v1/gifs/search";
 
   const { data, error } = useSWR<GiphySearchRes>(
@@ -58,7 +58,7 @@ export default function Gifs() {
 
   return (
     <Box>
-      <Box d="flex" justifyContent="center" pb="8">
+      <Box d="flex" justifyContent="center" pb="8" >
         <Heading
           bgGradient="linear(to-t, #7928CA, #FF0080)"
           bgClip="text"
@@ -88,11 +88,11 @@ export default function Gifs() {
           <BouncingBall />
         </Center>
       ) : (
-        <Box>
+        <Box >
           <InfiniteScroll
             style={
               isDesktop
-                ? { display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }
+                ? { display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }
                 : { display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }
             }
             scrollableTarget="scrollableTarget"
@@ -114,7 +114,7 @@ export default function Gifs() {
           >
             {gifs.map((gif) => {
               return (
-                <GridItem key={gif.id} h="100%" w={gif.width} p="2">
+                <GridItem key={gif.id} h="100%" w={gif.width} p="2" justifySelf="start">
                   <GifCard
                     gif={gif}
                     isFavorite={!!favoriteGifs.find((f) => f.id === gif.id)}

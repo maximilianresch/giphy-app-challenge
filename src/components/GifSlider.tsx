@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { FaRegHandPointer } from "react-icons/fa";
 import { MotionBox } from "../components/MotionBox";
 
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export const GifSlider: React.FC = () => {
@@ -33,6 +34,8 @@ export const GifSlider: React.FC = () => {
     },
   };
 
+ 
+
   return (
     <Box p="3">
       <Stack
@@ -44,7 +47,7 @@ export const GifSlider: React.FC = () => {
         {data.data.map((gif: any) => {
           return (
             <Box w="100%" h="auto">
-              <Image key={gif.id} opacity="0.9" src={gif.images.fixed_height.webp} />
+              <Image key={gif.id}  src={gif.images.fixed_height.webp} />
             </Box>
           );
         })}
